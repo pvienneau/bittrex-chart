@@ -9,12 +9,11 @@ mongoose.connection.on(
 
 mongoose.connection.once(
     'open',
-    // eslint-disable-next-line
-    console.log.bind(console, 'Connected to mongo.')
+    console.success.bind(console, 'Connected to mongo.')
 );
 
 mongoose.init = function() {
-    mongoose.connect(
+    return mongoose.connect(
         `mongodb://${process.env.MONGO_USER_NAME}:${process.env.MONGO_USER_PASSWORD}@${process.env.MONGO_URI}:${process.env.MONGO_PORT}/${process.env.MONGO_DATABASE}`,
         {
             useMongoClient: true,

@@ -9,11 +9,10 @@ import { mongoose } from 'database';
 import { startProcesses } from 'process';
 
 dotenv.config();
-mongoose.init();
 
 const app = express();
 
 app.use(bodyParser.json());
 app.use(boolParser());
 
-startProcesses();
+mongoose.init().then(() => startProcesses());

@@ -1,15 +1,11 @@
 import { compose } from 'ramda';
 import camelCase from 'lodash.camelcase';
-import colors from 'colors';
+import pluralize from 'pluralize';
 
-const executePaths = paths =>
-    /*paths.forEach(path => {
-        console.log(`Executing ${camelCase(path)}`);
+const executePaths = paths => {
+    console.log(`Initializing ${pluralize('process', paths.length, true)}`);
 
-        require(path).default();
-    });*/
-
-    Promise.each(paths, path => {
+    return Promise.each(paths, path => {
         const pathFctName = camelCase(path);
 
         return require(path)
@@ -21,6 +17,7 @@ const executePaths = paths =>
                 )
             );
     });
+};
 
 export default function(processPaths = []) {
     return () => {
