@@ -1,0 +1,29 @@
+{
+    "presets": ["es2015", "stage-2"],
+    "plugins": [
+        [
+            "module-alias", [{
+                "expose": "utils",
+                "src": "./app/utils"
+            }, {
+                "expose": "helpers",
+                "src": "./app/helpers"
+            }, {
+                "expose": "routes",
+                "src": "./app/routes"
+            }, {
+                "expose": "database",
+                "src": "./app/database"
+            }, {
+                "expose": "models",
+                "src": "./app/models"
+            }, {
+                "expose": "jobs",
+                "src": "./app/jobs"
+            }, {
+                "expose": "process",
+                "src": "./app/process"
+            }]
+        ]
+    ]
+}

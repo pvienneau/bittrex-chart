@@ -1,0 +1,69 @@
+{
+    "name": "bittrex",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "dev": "babel-node ./server.js",
+        "dev:watch": "nodemon ./server.js --exec babel-node",
+        "test": "env TEST=true jest",
+        "test:watch": "yarn test -- --watchAll"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/pvienneau/bitttex-chart.git"
+    },
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/pvienneau/bitttex-chart/issues"
+    },
+    "homepage": "https://github.com/pvienneau/bitttex-chart#readme",
+    "dependencies": {
+        "babel-plugin-module-alias": "^1.6.0",
+        "bluebird": "^3.5.0",
+        "body-parser": "^1.17.2",
+        "colors": "^1.1.2",
+        "crypto-js": "^3.1.9-1",
+        "cryptocompare": "^0.1.0",
+        "deep-assign": "^2.0.0",
+        "dotenv": "^4.0.0",
+        "express": "^4.15.4",
+        "express-query-boolean": "^1.0.0",
+        "http-status-codes": "^1.2.0",
+        "lodash.camelcase": "^4.3.0",
+        "moment": "^2.18.1",
+        "mongodb": "^2.2.31",
+        "mongoose": "^4.11.7",
+        "node-fetch": "^1.7.2",
+        "node.bittrex.api": "^0.4.4",
+        "pluralize": "^6.0.0",
+        "qs": "^6.5.0",
+        "ramda": "^0.24.1"
+    },
+    "devDependencies": {
+        "babel-cli": "^6.26.0",
+        "babel-eslint": "^7.2.3",
+        "babel-jest": "^20.0.3",
+        "babel-polyfill": "^6.26.0",
+        "babel-preset-es2015": "^6.24.1",
+        "babel-preset-stage-2": "^6.24.1",
+        "chai": "^4.1.1",
+        "jest": "^20.0.4",
+        "nodemon": "^1.11.0"
+    },
+    "jest": {
+        "testEnvironment": "node",
+        "rootDir": "./",
+        "setupTestFrameworkScriptFile": "<rootDir>/jest",
+        "testPathIgnorePatterns": [
+            "/node_modules/"
+        ],
+        "moduleNameMapper": {
+            "^([a-z\\-]+)/(.*)": "<rootDir>/$1/$2"
+        },
+        "testMatch": [
+            "**/__tests__/**/*.spec.js?(x)"
+        ]
+    }
+}
