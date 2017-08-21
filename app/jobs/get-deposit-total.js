@@ -4,6 +4,7 @@ import pluralize from 'pluralize';
 
 import { Request } from 'helpers';
 import { Deposit } from 'models';
+import { dollar } from 'utils/string';
 
 export default function() {
     return Deposit.find({})
@@ -17,7 +18,7 @@ export default function() {
         .then(
             tap(amount_cad =>
                 console.log(
-                    `Cumulative deposits amounting to ${amount_cad} $ CAD.`
+                    `Cumulative deposits amounting to ${dollar(amount_cad)} $ CAD.`
                 )
             )
         );

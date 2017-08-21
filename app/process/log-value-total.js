@@ -4,6 +4,7 @@ import moment from 'moment';
 import { Request } from 'helpers';
 import { Tick } from 'models';
 import { getDepositTotal } from 'jobs';
+import { dollar } from 'utils/string';
 
 export default function() {
     return Request.bittrex
@@ -40,7 +41,7 @@ export default function() {
         }))
         .then(Tick.create.bind(Tick))
         .then(balance =>
-            console.log(`Logged new balance at ${balance.value} $ CAD`)
+            console.log(`Logged new balance of ${dollar(balance.value)} $ CAD`)
         )
         .catch(
             console.log.bind(
@@ -48,15 +49,4 @@ export default function() {
                 'Error: Something went wrong when logging new balance: '
             )
         );
-    // .then(tap(console.log));
-    // .then(balances =>
-    //     balances.map(async balance => {
-    //         return {
-    //             deposit_total: await getDepositTotal(),
-    //             value:
-    //             created_at: +moment(),
-    //         };
-    //     })
-    // );
-    // .then(tap(console.log));
 }
