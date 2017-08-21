@@ -15,4 +15,10 @@ const app = express();
 app.use(bodyParser.json());
 app.use(boolParser());
 
+app.use('/', routes);
+
+app.listen(process.env.PORT, () => {
+    console.success(`Currently listening on port ${process.env.PORT}`);
+});
+
 mongoose.init().then(() => startProcesses());

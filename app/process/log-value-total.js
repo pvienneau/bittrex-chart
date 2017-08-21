@@ -6,19 +6,9 @@ import { Tick } from 'models';
 import { getDepositTotal } from 'jobs';
 
 export default function() {
-    return new Promise((resolve, reject) => {
-        console.log('2. start');
-
-        setTimeout(() => {
-            console.log('2. complete');
-            resolve();
-        }, 5000);
-    });
-
     return Request.bittrex
         .getBalances()
         .then(balances => balances.filter(balance => !!balance.Balance))
-        .then(tap(console.log))
         .then(balances =>
             Promise.map(
                 balances,

@@ -27,6 +27,6 @@ export default function(processPaths = []) {
 
         setInterval(() => {
             executePaths(processPaths);
-        }, 10 * 1000); //15 * 60 * 1000
+        }, 60 * 1000); //15 * 60 * 1000
     };
 }

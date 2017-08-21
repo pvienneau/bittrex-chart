@@ -6,16 +6,6 @@ import { Request } from 'helpers';
 import { Deposit } from 'models';
 
 export default function() {
-    return new Promise((resolve, reject) => {
-        console.log('1. start');
-
-        setTimeout(() => {
-            console.log('1. complete');
-            console.log('rejecting');
-            reject();
-        }, 5000);
-    });
-
     return Request.bittrex
         .getDepositHistory()
         .then(async deposits => {

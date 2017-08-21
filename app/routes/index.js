@@ -1,7 +1,9 @@
-import appRoutes from './app';
-import apiRoutes from './api';
+import { Router } from 'express';
 
-module.exports = function(app, db) {
-    appRoutes(app, db);
-    apiRoutes(app, db);
-};
+const router = Router();
+
+import api from './api';
+
+router.use('/api', api);
+
+export default router;
