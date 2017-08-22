@@ -23,6 +23,18 @@
             }, {
                 "expose": "process",
                 "src": "./app/process"
+            }, {
+                "expose": "assets",
+                "src": "./app/assets"
+            }, {
+                "expose": "views",
+                "src": "./app/views"
+            }, {
+                "expose": "public",
+                "src": "./app/public"
+            }, {
+                "expose": "lib",
+                "src": "./app/lib"
             }]
         ]
     ]
