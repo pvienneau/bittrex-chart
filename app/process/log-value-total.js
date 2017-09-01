@@ -37,7 +37,6 @@ export default function() {
         .then(async value => ({
             value,
             deposit_total: await getDepositTotal(),
-            created_at: moment().toDate(),
         }))
         .then(Tick.create.bind(Tick))
         .then(balance =>

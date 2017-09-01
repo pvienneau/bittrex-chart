@@ -4,9 +4,19 @@ import { Tick } from 'models';
 
 const router = Router();
 
+router.get('/', (req, res) => {
+    Tick.findAll().then(ticks => {
+        res.send(ticks);
+    });
+});
+
 router.get('/latest', (req, res) => {
-    Tick.findOne({}, {}, { sort: { created_at: -1 } }).then(tick => {
-        res.send(tick.toJSON());
+    Tick.findLast().then(tick => {
+        console.log(tick);
+        console.log(tick.toObject());
+        console.log(tick.toJSON());
+
+        res.send(tick);
     });
 });
 

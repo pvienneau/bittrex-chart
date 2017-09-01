@@ -1,41 +1,57 @@
 {
-    "presets": ["es2015", "stage-2"],
+    "presets": [
+        "es2015",
+        "stage-2"
+    ],
     "plugins": [
         [
-            "module-alias", [{
-                "expose": "utils",
-                "src": "./app/utils"
-            }, {
-                "expose": "helpers",
-                "src": "./app/helpers"
-            }, {
-                "expose": "routes",
-                "src": "./app/routes"
-            }, {
-                "expose": "database",
-                "src": "./app/database"
-            }, {
-                "expose": "models",
-                "src": "./app/models"
-            }, {
-                "expose": "jobs",
-                "src": "./app/jobs"
-            }, {
-                "expose": "process",
-                "src": "./app/process"
-            }, {
-                "expose": "assets",
-                "src": "./app/assets"
-            }, {
-                "expose": "views",
-                "src": "./app/views"
-            }, {
-                "expose": "public",
-                "src": "./app/public"
-            }, {
-                "expose": "lib",
-                "src": "./app/lib"
-            }]
+            "module-alias",
+            [
+                {
+                    "expose": "utils",
+                    "src": "./app/utils"
+                },
+                {
+                    "expose": "helpers",
+                    "src": "./app/helpers"
+                },
+                {
+                    "expose": "routes",
+                    "src": "./app/routes"
+                },
+                {
+                    "expose": "database",
+                    "src": "./app/database"
+                },
+                {
+                    "expose": "models",
+                    "src": "./app/models"
+                },
+                {
+                    "expose": "jobs",
+                    "src": "./app/jobs"
+                },
+                {
+                    "expose": "process",
+                    "src": "./app/process"
+                },
+                {
+                    "expose": "assets",
+                    "src": "./app/assets"
+                },
+                {
+                    "expose": "public",
+                    "src": "./app/public"
+                },
+                {
+                    "expose": "lib",
+                    "src": "./app/lib"
+                },
+                {
+                    "expose": "views",
+                    "src": "./app/views"
+                }
+            ]
         ]
     ]
 }

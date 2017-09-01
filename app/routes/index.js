@@ -9,7 +9,7 @@ router.use('/api', api);
 // router.use('/assets', assets);
 
 router.get('/', (req, res) => {
-    res.sendFile(require.resolve('views/chart.html'));
+    res.render('chart');
 });
 
 export default router;
